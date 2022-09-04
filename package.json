@@ -1,0 +1,30 @@
+{
+  "name": "app_backend_matos",
+  "version": "1.0.0",
+  "description": "- express\r - bcrypt\r - jsonwebtoken\r - nodemon",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha --timeout 20000",
+    "start": "nodemon main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "chai": "^4.3.6",
+    "cli-color": "^2.0.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "jest": "^28.1.3",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^10.0.0",
+    "mongoose": "^6.4.4",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.4"
+  },
+  "engines": {
+    "node": "16.13.1"
+  }
+}
