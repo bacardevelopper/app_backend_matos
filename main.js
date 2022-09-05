@@ -1,26 +1,16 @@
 /* import modules */
 const express = require("express");
 const helmet = require("helmet");
-const { print } = require("./useful_functions/console_log");
-const mongoose = require("mongoose");
 require("dotenv").config();
+const { print } = require("print_console_log");
+const { connectionMongoDb } = require('./models/config__database');
+
 /* import modules */
 
 /* config */
 let port_config = 8080;
 const main_express = express();
 const PORT = process.env.PORT || port_config;
-
-/* config connexion database */
-let uri_mongodb = process.env.MONGODB_ENV;
-
-const connectionMongoDb = async () => {
-  await mongoose.connect(
-    uri_mongodb,
-    { useNewUrlParser: true },
-    { useUnifieldTopology: true }
-  );
-};
 
 let reponseMongoDb = ["connexion mongodb ok", "connexion mongodb not ok"];
 
@@ -61,9 +51,11 @@ main_express.use("/crud", routes.businessRoutes);
 function listenPort() {
   if (process.env.NODE_ENV !== "test") {
     main_express.listen(PORT, () => {
+      
       print("############################################");
       print(`# server running at: http://localhost:${PORT} #`);
       print("############################################");
+      
     });
   }
 }

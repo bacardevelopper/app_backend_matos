@@ -1,5 +1,5 @@
-const { print } = require("../useful_functions/console_log");
 let model_matos = require("../models/model_config_objet");
+const { print } = require("print_console_log");
 
 exports.fct_read = (req, res, next) => {
   return res.status(200).json({ message: "fonction read ok" });

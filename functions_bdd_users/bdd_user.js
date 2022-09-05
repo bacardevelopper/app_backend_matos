@@ -1,4 +1,4 @@
-const { print } = require("../useful_functions/console_log");
+const { print } = require("print_console_log");
 let Model_user = require("../models/model_config_user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");

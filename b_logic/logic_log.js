@@ -1,5 +1,5 @@
 /* import modules */
-const { print } = require("../useful_functions/console_log");
+const { print } = require("print_console_log");
 const { createUser, connectUser } = require("../functions_bdd_users/bdd_user");
 const {
   generateToken,
