@@ -51,11 +51,9 @@ main_express.use("/crud", routes.businessRoutes);
 function listenPort() {
   if (process.env.NODE_ENV !== "test") {
     main_express.listen(PORT, () => {
-      
       print("############################################");
       print(`# server running at: http://localhost:${PORT} #`);
       print("############################################");
-      
     });
   }
 }

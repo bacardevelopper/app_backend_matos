@@ -57,6 +57,3 @@ exports.create_userCotroleur = async (req, res, next) => {
     return res.status(401).json({ message: "signup user not ok" });
 };
 
-exports.authentifVerif = async (req, res, next) => {
-  return res.status(200);
-}

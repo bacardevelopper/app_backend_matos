@@ -7,6 +7,5 @@ const auth = require('../middleware/authentification');
 let routes_user = express.Router();
 routes_user.post('/signup', fct_log.create_userCotroleur);
 routes_user.post('/login', fct_log.login_userControleur);
-// routes_user.post('/auth-verif', auth, fct_log.authentifVerif);
 
 module.exports = routes_user;
