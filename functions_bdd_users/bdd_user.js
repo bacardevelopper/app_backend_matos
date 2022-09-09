@@ -14,7 +14,7 @@ exports.generateToken = function (data) {
 exports.passwordCompare = async function (mdpText, mdpHash) {
   let passwordCompare = bcrypt.compare(mdpText, mdpHash);
   return passwordCompare;
-}
+};
 
 function emailRegex(email_arg) {
   let email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_arg);
@@ -68,6 +68,7 @@ exports.createUser = async (user_name_arg, email_arg, password_arg) => {
 };
 
 exports.connectUser = async (user_email, user_password_text) => {
+  print(user_password_text);
   let email_regex_bool = Boolean(emailRegex(user_email));
   let password_test = Boolean(passwordTest(user_password_text));
 
@@ -75,4 +76,9 @@ exports.connectUser = async (user_email, user_password_text) => {
     let find_user = await Model_user.findOne({ email: user_email });
     return find_user;
   }
+};
+
+exports.findUserIdAnName = async (idUser) => {
+  
+  return data;
 };
