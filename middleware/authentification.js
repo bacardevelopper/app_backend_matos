@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
-let secret_token_jwt = "976mayotte";
 const { print } = require("print_console_log");
+
+let secret_token_jwt = "976mayotte";
 
 const auth = (req, res, next) => {
 

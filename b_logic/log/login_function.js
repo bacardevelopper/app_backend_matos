@@ -1,10 +1,8 @@
-/* import modules */
-const { print } = require("print_console_log");
-const { createUser, connectUser } = require("../functions_bdd_users/bdd_user");
+const { createUser, connectUser } = require("../../functions_bdd_users/bdd_user");
 const {
   generateToken,
   passwordCompare,
-} = require("../functions_bdd_users/bdd_user");
+} = require("../../functions_bdd_users/bdd_user");
 /* import modules */
 
 exports.login_userControleur = async (req, res, next) => {
@@ -36,26 +34,10 @@ exports.login_userControleur = async (req, res, next) => {
       };
       return res.status(200).json(reponse_json);
     } else {
-      return res.status(400).json({ message: "verifier vos ID" });
+      return res.status(400).json({ message: "erreur sur mot de passe" });
     }
   }
   if (connect_wait === null) {
     return res.status(400).json({ message: "verifier vos ID" });
   }
 };
-
-exports.create_userCotroleur = async (req, res, next) => {
-  let user = {
-    name: req.body.nom,
-    email: req.body.email,
-    password_in: req.body.password,
-  };
-
-  let reponse = await createUser(user.name, user.email, user.password_in);
-  let reponse_bool = Boolean(reponse);
-
-  if (reponse_bool) return res.status(201).json({ message: "signup user ok" });
-  if (!reponse_bool)
-    return res.status(401).json({ message: "signup user not ok" });
-};
-
