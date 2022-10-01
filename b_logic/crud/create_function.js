@@ -1,4 +1,5 @@
 const { print } = require("print_console_log");
+let model_matos = require("../../models/model_config_objet");
 
 exports.fct_create = (req, res, next) => {
     print(req.body);
@@ -6,9 +7,7 @@ exports.fct_create = (req, res, next) => {
     // nouveaux modele
     let model_post = new model_matos({
       nom: req.body.nom,
-      batterie: req.body.batterie,
       avis: req.body.avis,
-      flux: req.body.flux,
     });
   
     const save_data = () => {

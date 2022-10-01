@@ -6,6 +6,7 @@ let model_materiel = new SchemaInst({
   nom: { type: String, required: true },
   batterie: { type: Number },
   avis: { type: String },
+  lieu : { type : String},
   flux : { type : Array }
 });
 
