@@ -15,11 +15,19 @@ async function deleteManyId(listArrayId) {
 
 exports.fct_deleteMany = async (req, res, next) => {
   let list_delete = req.body.array;
-  deleteManyId(list_delete)
-    .then((data) => {
-      return res.status(200).json({ message: "matériels supprimés" });
-    })
-    .catch((e) => {
-      return res.status(400).json({ message: "echec de suppréssion" });
-    });
+  let sizeList = list_delete.length;
+
+  if (sizeList > 0) {
+    deleteManyId(list_delete)
+      .then((data) => {
+        return res.status(200).json({ message: "matériels supprimés" });
+      })
+      .catch((e) => {
+        return res.status(400).json({ message: "echec de suppréssion" });
+      });
+  }
+
+  if (sizeList === 0) {
+    return res.status(400).json({ message: "c'est vide" });
+  }
 };
