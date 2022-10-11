@@ -1,7 +1,18 @@
 let model_matos = require("../../models/model_config_objet");
 const { print } = require("print_console_log");
 
-exports.fct_delete = (req, res, next) => {};
+exports.fct_delete = async (req, res, next) => {
+  let idPost = req.body.id;
+
+  model_matos.deleteOne({ _id: idPost }).then((value) => {
+    let dataCountInt = value.deletedCount;
+    
+    if (dataCountInt === 1)
+      return res.status(200).json({ message: "suppression reussit" });
+    if (dataCountInt === 0)
+      return res.status(400).json({ message: "aucun élément a été supprimé" });
+  });
+};
 
 // fonction suppression de plusieurs
 async function deleteManyId(listArrayId) {
