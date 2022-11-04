@@ -7,7 +7,7 @@ let model_materiel = new SchemaInst({
   batterie: { type: Number },
   avis: { type: String },
   lieu : { type : String},
-  flux : { type : Array }
+  flux : []
 });
 
 module.exports = mongoose.model('model_materiel', model_materiel);

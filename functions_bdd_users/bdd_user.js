@@ -78,7 +78,7 @@ exports.connectUser = async (user_email, user_password_text) => {
   }
 };
 
-exports.findUserIdAnName = async (idUser) => {
-  
-  return data;
+exports.findUserIdAndName = async (idUser) => {
+  const resultat = await Model_user.findOne({ _id: idUser });
+  return resultat;
 };
