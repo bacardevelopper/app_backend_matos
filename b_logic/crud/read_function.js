@@ -14,6 +14,7 @@ exports.fct_read = async (req, res, next) => {
 };
 
 exports.fct_readAll = async (req, res, next) => {
+  console.log("REQUETE BIEN RECU");
   let userDecoded = String(req.user_decoded.data);
   let data = await model_user.findOne({ _id: userDecoded });
   let userNameRes = data.user_name;

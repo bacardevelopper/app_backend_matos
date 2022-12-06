@@ -4,6 +4,7 @@ const { findUserIdAndName } = require("../../functions_bdd_users/bdd_user");
 
 let msgReussite = "modification apporté";
 let msgEchec = "modification non apporté";
+
 exports.fct_updateItem = async (req, res, next) => {
   print(req.body);
   let idUser = req.user_decoded.data;
