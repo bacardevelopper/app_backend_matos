@@ -6,10 +6,12 @@ const {
 /* import modules */
 
 exports.create_userControler = async (req, res, next) => {
+  
     let user = {
       name: req.body.nom,
       email: req.body.email,
       password_in: req.body.password,
+      poste : "c_num"
     };
   
     let reponse = await createUser(user.name, user.email, user.password_in);

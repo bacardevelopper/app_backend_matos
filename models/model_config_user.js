@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 let SchemaInst = mongoose.Schema;
+
 // model
 let model_user = new SchemaInst({
   user_name: { type: String, required: true },

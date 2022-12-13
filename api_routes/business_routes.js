@@ -6,6 +6,7 @@ const { fct_delete, fct_deleteMany } = require("../b_logic/crud/delete_function"
 const { fct_readAll, fct_read } = require("../b_logic/crud/read_function");
 const { auth_fct } = require("../b_logic/log/auth_function");
 const auth = require("../middleware/authentification");
+
 // config routes
 let routes_crud = express.Router();
 routes_crud.post("/create", auth, fct_create);

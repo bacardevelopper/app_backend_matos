@@ -22,7 +22,7 @@ exports.fct_readAll = async (req, res, next) => {
 
   model_matos.find((err, doc) => {
     if (doc) {
-      return res.status(201).json({ userNameRes, idUser, doc });
+      return res.status(201).json({doc});
     } else {
       return res
         .status(401)
