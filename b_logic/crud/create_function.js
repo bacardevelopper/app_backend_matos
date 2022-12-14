@@ -8,7 +8,8 @@ exports.fct_create = (req, res, next) => {
   let model_post = new model_matos({
     nom: req.body.nom,
     avis: req.body.avis,
-    lieu: "",
+    lieu: req.body.lieu,
+    disponible : true
   });
 
   const save_data = () => {
