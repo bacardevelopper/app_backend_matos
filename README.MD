@@ -27,6 +27,12 @@ NODE_ENV="dev"
 MONGODB_ENV="uri_mongo_db"
 ```
 
+### Pour démarrer le backend
+
+```
+npm start
+```
+
 ### Pour les test
 
 Dans le fichier .env changer la valeur de la variable NODE_ENV="test"
