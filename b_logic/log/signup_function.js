@@ -14,7 +14,7 @@ exports.create_userControler = async (req, res, next) => {
       poste : "c_num"
     };
   
-    let reponse = await createUser(user.name, user.email, user.password_in);
+    let reponse = await createUser(user.name, user.email, user.password_in, user.poste);
     let reponse_bool = Boolean(reponse);
   
     if (reponse_bool) return res.status(201).json({ message: "signup user ok" });

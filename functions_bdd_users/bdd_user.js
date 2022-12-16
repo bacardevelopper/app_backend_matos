@@ -38,7 +38,7 @@ function passwordTest(password_arg) {
   }
 }
 
-exports.createUser = async (user_name_arg, email_arg, password_arg) => {
+exports.createUser = async (user_name_arg, email_arg, password_arg, poste_arg) => {
   let email_regex_bool = Boolean(emailRegex(email_arg));
   let user_name_test = Boolean(userNameTest(user_name_arg));
   let password_test = Boolean(passwordTest(password_arg));
@@ -51,6 +51,7 @@ exports.createUser = async (user_name_arg, email_arg, password_arg) => {
       user_name: user_name_arg,
       email: email_arg,
       password: password_hash,
+      poste : poste_arg
     });
 
     let reponse_save = await modelPostUser
