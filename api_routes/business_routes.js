@@ -11,7 +11,7 @@ const auth = require("../middleware/authentification");
 let routes_crud = express.Router();
 routes_crud.post("/create", auth, fct_create);
 routes_crud.post("/update", auth, fct_updateItem);
-routes_crud.post("/delete", auth, fct_delete);
+routes_crud.get("/delete/:id/:token", auth, fct_delete);
 routes_crud.post('/delete-many', auth, fct_deleteMany);
 routes_crud.get("/read-all/:token", auth, fct_readAll);
 routes_crud.get("/auth/:token", auth, auth_fct);
