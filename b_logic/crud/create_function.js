@@ -2,13 +2,10 @@ const { print } = require("print_console_log");
 let model_matos = require("../../models/model_config_objet");
 
 exports.fct_create = (req, res, next) => {
-  print(req.body);
-
-  // nouveaux modele
   let model_post = new model_matos({
     nom: req.body.nom,
     avis: req.body.avis,
-    lieu: req.body.lieu,
+    lieu: 'mamoudzou',
     disponible : true
   });
 
